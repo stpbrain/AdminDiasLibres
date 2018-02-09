@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+ 
+<head>
+	<title>Inicio</title>
+</head>
+<body style="background-image: url(img/ext.jpg); background-repeat: no-repeat; background-position: center center;  ">
+<div>
+	<br>
+
+</div>
+<div  style="position: absolute; top: 37%; left: 60%"  >
+	<form method="POST" action="validaciones/validaUsuario.php">
+	<table class="container-fluid ">
+		<tr>
+			<td >
+				<label>Ingrese Usuario :</label><input type="text" name="user" placeholder="rut sin DV" minlength="8" maxlength="8" class="form-control" required="">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Ingrese Password :</label><input type="password" name="pass" placeholder="Ingrese Password" class="form-control" required="">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" name="login" value="Logear" class="btn btn-success">	
+				<a href="registro.php" class=" btn btn-info">Registrate </a>
+			</td>
+			
+		</tr>
+	</table>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<script type='text/javascript' src='js/jquery.js'></script>
+<link href='calendario/fullcalendar.css' rel='stylesheet'/>
+<script type='text/javascript' src='calendario/lib/jquery.min.js'></script>
+<script type='text/javascript' src='calendario/lib/moment.min.js'></script>
+<script type='text/javascript' src='calendario/fullcalendar.js'></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+
+<head>
+	<title>Calendario</title>
+</head>
+
+<script>
+
+$(document).ready(function () {
+  
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+
+    // page is now ready, initialize the calendar...
+    var initialLocaleCode = 'es';
+    var calendar = $('#calendar').fullCalendar({
+        // put your options and callbacks here
+        header: {
+            left: '',
+            center: 'title',
+            right: 'prev,next today'
+        },
+         buttonText:{ 
+         today:    'Hoy', 
+    month:    'Mes', 
+    week:     'Semana', 
+    day:      'Dia' 
+    }, 
+        events: {
+        url: 'listarEventos.php',
+        cache: true
+    },
+        monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'], 
+    monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'], 
+    dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'], 
+    dayNamesShort: ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'], 
+        defaultView: 'month',
+        defaultDate: date,
+        locale: initialLocaleCode,
+        dayClick: function (date, jsEvent, view) {
+            //CODIGO SIN IMPORTANCIA
+        }        
+    })
+
+});
+
+</script>
+<style>
+
+ body {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+
+  }
+
+
+ #calendar {
+  width: 900px;
+  margin: 0 auto;
+  }
+
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Seele´s Solutions</a>
+    </div>
+    <ul class="nav navbar-nav">
+   
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+     
+      <li><a href="vistas/vistaAdministrativa.php"><span class="glyphicon glyphicon-log-in"></span> Home</a></li>
+    </ul>
+  </div>
+</nav>
+<div id='calendar'></div>
+</body>
+</html>	
